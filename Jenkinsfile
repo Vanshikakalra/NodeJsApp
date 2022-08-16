@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "Build stage."
                 echo "Hello $params.ver1"
-                sh 'docker run -d -it -p 3002:3002 aesthisia-demo:latest'
+                sh 'docker run -d -it -p 3002:3002 dockerfile.dev'
                 sh 'docker tag aesthisia-demo:latest aesthisia-demo:${ver1}'
 
             }
