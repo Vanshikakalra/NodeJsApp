@@ -9,6 +9,8 @@ pipeline {
                 echo "Build stage."
                 echo "Hello $params.ver1"
                 sh 'docker build -t aesthisia-demo .'
+                sh 'docker tag aesthesia-demo:latest aesthesia-demo:${ver1}'
+                sh 'docker run -d -it -p 3000:3000 aesthesia-demo:${ver1}'
                                
             }
         }
