@@ -8,10 +8,8 @@ pipeline {
             steps {
                 echo "Build stage."
                 echo "Hello $params.ver1"
-                sh 'docker build - < dockerfile.dev -t aesthisia-demo:${ver1}'
-                sh 'docker run -d -it -p 3002:3002 '
-                
-
+                sh 'docker build - < dockerfile.dev -t aesthesia-demo'
+                sh 'docker run -d -it -p 3000:3000 -t aesthisia-demo:latest aesthesia-demo:${ver1}'                
             }
         }
         stage("Test") {
